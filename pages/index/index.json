@@ -1,0 +1,16 @@
+
+{"navigationBarTitleText": "首页",
+  "component": true,
+  "usingComponents": {
+    "mp-form-page": "../../page/weui/components/form-page/form-page",
+    "mp-toptips": "../../page/weui/components/toptips/toptips",
+    "mp-cells": "../../page/weui/components/cells/cells",
+    "mp-cell": "../../page/weui/components/cell/cell",
+    "mp-checkbox": "../../page/weui/components/checkbox/checkbox",
+    "mp-checkbox-group": "../../page/weui/components/checkbox-group/checkbox-group",
+    "mp-form": "../../page/weui/components/form/form",
+    "mp-badge": "../../page/weui/components/badge/badge",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index"
+  }
+}

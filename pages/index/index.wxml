@@ -1,0 +1,30 @@
+<view class="index" data-weui-theme="{{theme}}">
+	<!-- swiper start -->
+	<view class="swiper-container">
+		<swiper bindchange="swiperCHange" current="{{current}}" class="swiper_container" autoplay="{{false}}" circular="{{true}}">
+			<block wx:for="{{bannerList}}" wx:key="index">
+				<swiper-item class="swiper_item">
+					<image mode="widthFix" src="{{item}}" class="slide_image" />
+				</swiper-item>
+			</block>
+		</swiper>
+		<view class="dots_container">
+			<block wx:for="{{bannerList}}" wx:key="index">
+				<view class="dots_item {{current==index?'theme_background_color':''}}"></view>
+			</block>
+		</view>
+	</view>
+	<!-- swiper end -->
+	<!-- line 2 start -->
+	<view class="line_2">
+		<van-grid border="{{ false }}">
+			<block wx:for="{{list}}" wx:key="index">
+				<van-grid-item use-slot id="{{item.id}}" bind:click="kindToggle">
+					<image class="home_icon" mode="widthFix" src="../../image/new/icon-{{index+1}}.png" />
+					<view class="home_icon_text">{{item.name}}</view>
+				</van-grid-item>
+			</block>
+		</van-grid>
+	</view>
+	<!-- line 2 end -->
+</view>

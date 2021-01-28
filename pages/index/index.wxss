@@ -1,0 +1,51 @@
+/* example/badge/badge.wxss */
+@import '../common.wxss';
+
+@import '../index.wxss';
+.blue {
+  background: blue;
+}
+.index{
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+.swiper-container{
+  padding:20rpx 0;
+  position: relative;
+}
+.swiper_container{
+  width:90%;
+  margin:0 auto;
+}
+.swiper_item{
+  width: 95%;
+  border-radius: 25rpx;
+  overflow: hidden;
+}
+.slide_image{
+  width: 100%;
+}
+.dots_container{
+  position: absolute;
+  left: 0;
+  bottom: 20rpx;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+}
+.dots_item{
+  display: inline-block;
+  margin:0 5rpx;
+  width:30rpx;
+  height: 10rpx;
+  border-radius: 25rpx;
+  background-color: #fff;
+}
+.home_icon{
+  width:45%;
+}
+.home_icon_text{
+  padding-top: 20rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}

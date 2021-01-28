@@ -1,0 +1,56 @@
+<view class="page" data-weui-theme="{{theme}}">
+	<mp-msg title="尾款支付详情">
+		<!-- <view slot="desc">内容详情，可根据实际需要安排，如果换行则不超过规定长度，居中展现<navigator url="" class="weui-msg__link">文字链接</navigator></view> -->
+		<!-- <view slot="extend">
+            <view>1. 说明1</view>
+            <view>2. 说明2</view>
+        </view> -->
+		<view slot="handle" class="bottom_btn">
+			<van-button block custom-class="theme_bg_color" disabled="{{tag}}" bindtap="submit">提交</van-button>
+		</view>
+		<mp-form slot="desc">
+			<van-cell-group>
+				<block>
+					<view class="weui-form-preview">
+						<!-- <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__label">需支付剩余金额</view>
+          <view class="weui-form-preview__value_in-hd">¥{{item.value}}</view>
+        </view> -->
+						<view class="weui-form-preview__bd">
+							<view class="weui-form-preview__item clear">
+								<view class="weui-form-preview__label">客户名称</view>
+								<view class="weui-form-preview__value">{{companyName}}</view>
+							</view>
+							<view class="weui-form-preview__item">
+								<view class="weui-form-preview__label">应付钱款</view>
+								<view class="weui-form-preview__value">{{value}}</view>
+							</view>
+							<view class="weui-form-preview__item">
+								<view class="weui-form-preview__label">创建时间</view>
+								<view class="weui-form-preview__value">{{createData}}</view>
+							</view>
+							<!-- <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">吨数总计</view>
+            <view class="weui-form-preview__value">{{item.weight}}</view>
+          </view> -->
+							<!-- <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">件数总计</view>
+            <view class="weui-form-preview__value">{{item.count}}</view>
+          </view> -->
+							<mp-cells>
+								<mp-cells>
+									<block wx:for-items="{{foodData}}">
+										<view class="code_lines"> 编号{{item.insideNo}} 钢卷号{{item.foodNo}}</view>
+									</block>
+								</mp-cells>
+							</mp-cells>
+						</view>
+					</view>
+					<van-cell prop="price" title="本次金额" custom-class="input_box" icon="gold-coin-o">
+						<input disabled="{{tag}}" bindinput="formInputChange" data-field="price" class="weui-input" type="digit" placeholder="{{str}}" value="{{money}}" />
+					</van-cell>
+				</block>
+			</van-cell-group>
+		</mp-form>
+	</mp-msg>
+</view>

@@ -1,0 +1,26 @@
+/**app.wxss**/
+/*@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';*/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.theme_color{
+  color: #e8be83 !important;
+}
+.theme_bg_color{
+  background-color: #e8be83 !important;
+  border-color:#e8be83 !important;
+  color: #fff !important;
+  font-weight: normal !important;
+}
+.theme_background_color{
+  background-color: #e8be83 !important;
+}
+.theme_border_color{
+  border:1px solid #e8be83 !important;
+}

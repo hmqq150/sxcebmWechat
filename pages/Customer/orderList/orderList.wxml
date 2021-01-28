@@ -1,0 +1,49 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <!-- <view class="page__hd">
+    <view class="page__title">待处理订单</view>
+    <view class="page__desc">请选择您要处理的订单</view>
+  </view> -->
+  <view class="page__bd">
+    <block wx:for-items="{{lists}}" wx:key="{{item.orderId}}" field="{{item.orderId}}">
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd title_line clear">
+          <view class="weui-form-preview__label">需支付保证金额</view>
+          <view class="weui-form-preview__value_in-hd">¥{{item.mount}}</view>
+        </view>
+        <view class="weui-form-preview__bd bottom_box">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">上游厂家</view>
+            <view class="weui-form-preview__value">{{item.steelName}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">业务号</view>
+            <view class="weui-form-preview__value">{{item.workNo}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">保证金比例</view>
+            <view class="weui-form-preview__value">{{item.bite}}%</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">业务人员</view>
+            <view class="weui-form-preview__value">{{item.workerName}}</view>
+          </view>
+          <mp-cells>
+            <mp-cells>
+              <block wx:for-items="{{item.typeList}}">
+                <!-- <van-divider /> -->
+                <view> 材质 -- {{item.caizhi}} 规格 -- {{item.guige}}</view>
+                <view> 采购价: {{item.caigouPrice}}</view>
+                <view> 吨数: {{item.weight}}</view>
+                <!-- <van-divider /> -->
+              </block>
+            </mp-cells>
+          </mp-cells>
+        </view>
+        <view class="weui-form-preview__ft bottom_btn">
+          <!-- <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="goBack"  id= "{{item.orderId}}">退回</view> -->
+          <view class="weui-form-preview__btn weui-form-preview__btn_primary theme_bg_color" hover-class="weui-form-preview__btn_active" bindtap="confirm" id="{{item.orderId}}">确认已支付</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

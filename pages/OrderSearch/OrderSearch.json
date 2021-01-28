@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "订单查询",
+  "usingComponents": {
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "mp-loading": "../../../page/weui/components/loading/loading",
+    "van-button": "@vant/weapp/button/index"      
+  }
+}

@@ -1,0 +1,46 @@
+<!--pages/Financialer/FinalPaymentInfoDetail/FinalPaymentInfoDetail.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+	<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+	<mp-form-page title="确认订单信息" subtitle="">
+		<!-- <view class="page__bd">
+			<view class="weui-form-preview">
+				<view class="weui-form-preview__bd">
+				</view>
+			</view>
+		</view> -->
+		<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+			<mp-cells title="商品订单信息">
+				<picker mode="date" value="{{date}}" start="2015-09-01" end="2030-09-01" bindchange="bindcreateDateChange" disabled="{{isTimeConfirmed}}">
+					<mp-cell title="订单日期" class="picker" footer="必选">
+						{{createTime}}
+					</mp-cell>
+				</picker>
+				<picker mode="date" value="{{date}}" start="2015-09-01" end="2030-09-01" bindchange="bindStartTimeChange" disabled="{{isTimeConfirmed}}">
+					<mp-cell title="起息日" class="picker" footer="必选">
+						{{startTime}}
+					</mp-cell>
+				</picker>
+				<picker mode="date" value="{{date}}" start="2015-09-01" end="2030-09-01" bindchange="bindEndTimeChange">
+					<mp-cell title="结息日" class="picker" footer="必选">
+						{{endTime}}
+					</mp-cell>
+				</picker>
+			</mp-cells>
+		</mp-form>
+
+		<!-- <checkbox-group slot="tips" bindchange="bindAgreeChange">
+      <label class="weui-agree">
+        <checkbox class="weui-agree__checkbox-check" />
+
+        <text class="weui-agree__checkbox"></text>
+        <view class="weui-agree__text">阅读并同意
+          <navigator>《相关条款》</navigator>
+        </view>
+      </label>
+    </checkbox-group> -->
+
+		<view slot="button">
+			<van-button custom-class="theme_bg_color" bind:click="submitForm" block>确定</van-button>
+		</view>
+	</mp-form-page>
+</view>

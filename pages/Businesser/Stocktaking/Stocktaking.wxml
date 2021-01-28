@@ -1,0 +1,51 @@
+<!--pages/Businesser/Stocktaking/Stocktaking.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <mp-form-page>
+   
+
+      <mp-cells title="库存统计">
+        <mp-cell prop="totalAmount" title="库存总数" ext-class="">
+          {{totalAmount}}
+        </mp-cell>
+        <mp-cell prop="totalWeight" title="总吨数" ext-class="">
+          {{totalWeight}}
+        </mp-cell>
+        <mp-cell prop="totalAmount" title="已盘点库存数" ext-class="">
+          {{currCount}}
+        </mp-cell>
+        <mp-cell prop="totalWeight" title="已盘点总吨数" ext-class="">
+          {{currWeight}}
+        </mp-cell>
+
+
+        <view class="bottom_button" wx:if="{{!hasPankuRecord}}">
+          <van-button custom-class="theme_bg_color start_btn" bindtap="pankuscan" block>开始盘库</van-button>
+          <!-- <button class="weui-btn" type="primary" bindtap="selectOrder">筛选订单</button> -->
+        </view>
+
+        <!-- <mp-cell prop="weight" title="吨数" ext-class="">
+          {{weight}}
+        </mp-cell> -->
+      </mp-cells>
+
+      <block >
+        <mp-cells title="库存详情  格式：杠号 - 钢卷号 - 重量 - 位置">  
+          <mp-cell prop="" title="" ext-class="" wx:for-items="{{list}}" wx:key="{{item.foodId}}" >
+            {{item.gangNo}} - {{item.proNo}} - {{item.weight}} - {{item.location[0]}}行{{item.location[1]}}列{{item.location[2]}}层
+            <van-icon wx:if="{{item.checked}}" name="passed" custom-class="food_in_icon"  color="green"size="25px"  />
+
+          </mp-cell>
+
+          <!-- <mp-cell prop="weight" title="吨数" ext-class="">
+          {{weight}}
+        </mp-cell> -->
+        </mp-cells>
+      </block>
+      <view slot="button" wx:if="{{hasPankuRecord}}" class="bottom_button">
+          <van-button type="default" custom-class="cancel_button" bind:click="stopScan" >结束盘库</van-button>
+          <van-button custom-class="theme_bg_color new_button" bind:click="pankuscan" >继续盘库</van-button>
+          <!-- <button class="weui-btn" type="primary" bindtap="selectOrder">筛选订单</button> -->
+        </view>
+  </mp-form-page>
+</view>

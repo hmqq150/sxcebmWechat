@@ -1,0 +1,10 @@
+=<view class="pop_box_container">
+  <view class="pop_box">
+    <view class="title">温馨提示</view>
+    <view class="content">{{text}}</view>
+    <view class="footer_btn">
+      <text class="cancel_btn" bindtap="cancelEvent">取消</text>
+      <text class="sure_btn" bindtap="sureEvent">确定</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="index">
+	<mp-toptips msg="{{error}}" type="error" show="{{error}}">
+	</mp-toptips>
+	<view class="userinfo">
+		<view class="item_title">我的信息</view>
+		<view class="item_content">
+			<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="get_user_info"> 获取头像昵称 </button>
+			<text wx:if="{{!hasUserInfo && canIUse}}" class="item_desc">点击按钮可从微信自动获取头像昵称</text>
+			<block wx:else>
+        <image bindtap="bindViewTap" src="{{userInfoLocal.avatarUrl}}" mode="cover" class="userinfo-avatar"></image>
+				<view class="userinfo-nickname">姓名 <text class="user_info">{{userInfo.realName}}</text></view>
+				<view class="userinfo-nickname">公司信息 <text class="user_info">{{userInfo.companyName}}</text></view>
+			</block>
+		</view>
+	</view>
+	<view>
+		<view class="item_title">设置</view>
+		<view class="kind-list">
+			<block wx:for-items="{{list}}" wx:key="{{item.id}}">
+				<view class="kind-list-item">
+					<view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+						<view class="kind-list-text">{{item.name}}</view>
+						<!-- <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image> -->
+						<view class="navigator-arrow"></view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

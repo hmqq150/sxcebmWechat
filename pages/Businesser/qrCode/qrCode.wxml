@@ -1,0 +1,98 @@
+<!--pages/Businesser/foodIn/foodIn.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+	<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+	<mp-form-page>
+		<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+			<mp-cells title="业务选择">
+				<picker range="{{steelFacList}}" bindchange="bindUpStreamChange">
+					<mp-cell title="上游厂家" class="picker" footer="选择厂家">
+						{{steelFac}}
+						<van-icon name="arrow" custom-class="food_in_icon" />
+					</mp-cell>
+				</picker>
+				<picker range="{{strogeeList}}" bindchange="bindStrogeChange">
+					<mp-cell title="仓储" class="picker" footer="选择仓储地点">
+						{{strogePlace}}
+						<van-icon name="arrow" custom-class="food_in_icon" />
+					</mp-cell>
+				</picker>
+			</mp-cells>
+			<mp-cells title="货物信息">
+
+				<!-- <mp-cell prop="name" title="货物规格" ext-class="">
+          <input bindinput="formInputChange" data-field="yewu" class="weui-input" type="text" placeholder="请输入业务号" />
+        </mp-cell> -->
+				<mp-cell prop="name" title="仓储编号" ext-class="">
+					{{insideNo}}
+					<input bindinput="formInputChange" data-field="gangNo" class="weui-input" type="text" placeholder="请输入杠号" />
+
+				</mp-cell>
+				<mp-cell prop="foodNo" title="钢卷号" ext-class="">
+					<input bindinput="formInputChange" data-field="foodNo" class="weui-input" type="text" placeholder="请输入钢卷号" />
+				</mp-cell>
+				<mp-cell prop="weight" title="吨数" ext-class="">
+					<input bindinput="formInputChange" data-field="weight" class="weui-input" type="digit"
+						placeholder="请输入入库吨数" />
+				</mp-cell>
+				<mp-cell prop="piece" title="块数" ext-class="">
+					<input bindinput="formInputChange" data-field="piece" class="weui-input" type="digit" placeholder="请输入块数" />
+				</mp-cell>
+			</mp-cells>
+		</mp-form>
+		<view slot="button" wx:if="{{!selectOrderTag}}" class="bottom_button">
+			<van-button type="default" custom-class="theme_bg_color new_button" bindtap="cancel" >取消</van-button>
+			<van-button custom-class="theme_bg_color new_button" bind:click="selectOrder">筛选订单</van-button>
+			<!-- <button class="weui-btn" type="primary" bindtap="selectOrder">筛选订单</button> -->
+		</view>
+		<view wx:else="{{selectOrderTag}}">
+			<mp-cells title="请选择所属订单">
+				<mp-checkbox-group prop="checkbox" multi="{{false}}" bindchange="radioChange">
+					<mp-checkbox wx:if="{{!isTaiGang}}" wx:for="{{checkboxItems}}" wx:key="id" label="订单号：{{item.workNo}}"
+						value="{{item.id}}" checked="{{item.checked}}">
+					</mp-checkbox>
+					<mp-checkbox wx:if="{{isTaiGang}}" wx:for="{{checkboxItems}}" wx:key="id" label="合同号：{{item.workNo}}"
+						value="{{item.id}}" checked="{{item.checked}}">
+					</mp-checkbox>
+				</mp-checkbox-group>
+			</mp-cells>
+		</view>
+		<!-- <checkbox-group slot="tips" bindchange="bindAgreeChange">
+			<label class="weui-agree">
+				<checkbox class="weui-agree__checkbox-check" />
+
+				<text class="weui-agree__checkbox"></text>
+				<view class="weui-agree__text">所选订单已全部入库</view>
+			</label>
+		</checkbox-group> -->
+		<view wx:if="{{confirm}}">
+			<mp-cells wx:if="{{isTaiGang}}">
+				<mp-cell prop="pName" title="品名" ext-class="">
+					{{pName}}
+				</mp-cell>
+				<mp-cell prop="caizhi" title="材质" ext-class="">
+					{{caizhi}}
+				</mp-cell>
+				<mp-cell prop="guige" title="规格" ext-class="">
+					{{guige}}
+				</mp-cell>
+				<!-- <mp-cell prop="weight" title="吨数" ext-class="">
+          {{weight}}
+        </mp-cell> -->
+			</mp-cells>
+			<mp-cells wx:else>
+				<picker range="{{ll}}" bindchange="bindGuigeChange">
+					<mp-cell prop="info" title="材质" ext-class="" footer="必选">
+						{{context}}
+					</mp-cell>
+				</picker>
+			</mp-cells>
+		</view>
+		<view slot="button" wx:if="{{selectOrderTag&&hasSelectOrder}}" class="bottom_button">
+			<!-- <button class="weui-btn" type="primary" bindtap="submitForm">下一步</button> -->
+			<van-button type="default" custom-class="theme_bg_color new_button"bind:click="cancel">取消</van-button>
+
+			<van-button custom-class="theme_bg_color new_button" bind:click="submitForm">下一步</van-button>
+
+		</view>
+	</mp-form-page>
+</view>

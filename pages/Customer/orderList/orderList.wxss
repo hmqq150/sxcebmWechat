@@ -1,0 +1,60 @@
+/* pages/Customer/orderList/orderList.wxss */
+@import '../../common.wxss';
+
+.weui-form-preview {
+    margin: 20rpx 0;
+    background-color: transparent !important;
+}
+
+.weui-form-preview__label {
+    color: #000 !important;
+    font-size: 30rpx;
+}
+
+.bottom_box {
+    width: 94%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.title_line {
+    width: 94%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 32rpx;
+    position: relative;
+    background-color: #666;
+    color: #fff;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.title_line .weui-form-preview__label {
+    color: #fff !important;
+}
+
+.title_line .weui-form-preview__value_in-hd {
+    font-size: 36rpx !important;
+}
+
+.weui-form-preview::before,
+.weui-form-preview::after,
+.weui-form-preview__hd::after,
+.weui-form-preview__ft::after {
+    border: none !important;
+}
+
+.bottom_btn {
+    width: 94%;
+    margin: 20rpx auto;
+}
+
+.bottom_btn>view {
+    border-radius: 10rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 30rpx;
+}

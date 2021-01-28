@@ -1,0 +1,96 @@
+@import '../../common.wxss';
+
+.weui-agree .weui-agree__text {
+  display: inline;
+}
+.weui-cells{
+  width: 94%;
+  margin:0 auto;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.weui-cells__title{
+  color: #666 !important;
+  padding: var(--cell-group-title-padding,30rpx 10rpx 30rpx 60rpx) !important;
+}
+.weui-cells__title{
+  margin: 0 !important;
+}
+.weui-cell{
+  padding:26rpx 20rpx !important;
+}
+.weui-form{
+  padding-top: 0 !important;
+  min-height: auto !important;
+  background-color: transparent !important;
+}
+.weui-form__control-area{
+  margin:0 !important;
+}
+.weui-input{
+  position: relative;
+  top: 4rpx;
+  text-align: right;
+  font-size: 26rpx;
+  color: #898d91;
+}
+.weui-label{
+  color: #000;
+  font-size: 30rpx;
+}
+.van-cell{
+  padding:var(--cell-vertical-padding,26rpx) var(--cell-horizontal-padding,20rpx) !important;
+}
+.weui-cell::before{
+  left:30rpx !important;
+  width:96%;
+  border-top:1px solid #ebedf0 !important;
+  color: #ebedf0 !important;
+}
+.weui-cell__ft{
+  font-size: 26rpx;
+  position: relative;
+  right: 30rpx;
+  color: #898d91;
+}
+.food_in_icon{
+  position: absolute !important;
+  right: 10rpx;
+  top: 34%;
+  color: #898d91;
+}
+.bottom_button{
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding:40rpx 0;
+  text-align: center;
+}
+.cancel_button{
+  left:-10rpx;
+  background-color: transparent !important;
+  border-color: #636363 !important;
+}
+.new_button{
+  right: -10rpx;
+}
+.new_button,.cancel_button{
+  display: inline-block !important;
+  width: 43% !important;
+  line-height: 44px !important;
+  font-weight: normal !important;
+  border-radius: 10rpx !important;
+}
+.weui-agree{
+  margin-top: 30rpx;
+}
+.weui-agree__text{
+  margin-left: 10rpx;
+  position: relative;
+  top: 4rpx;
+}
+.weui-cells::before,.weui-cells::after{
+  border:none !important;
+}

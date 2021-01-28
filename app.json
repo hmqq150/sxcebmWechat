@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/Businesser/createOrder/createOrder",
+    "pages/Customer/orderList/orderList",
+    "pages/Customer/goBackPage/goBackPage",
+    "pages/Financialer/orderListForMargin/orderListForMargin",
+    "pages/Financialer/MarginDetail/MarginDetail",
+    "pages/Financialer/orderListsAfterPayment/orderListsAfterPayment",
+    "pages/Businesser/bindingContract/bindingContract",
+    "pages/Businesser/qrCode/qrCode",
+    "pages/Businesser/KaipingConfirm/KaipingConfirm",
+    "pages/Customer/KaiPingApply/KaiPingApply",
+    "pages/Customer/DeliveryApplication/DeliveryApplication",
+    "pages/Financialer/FinalPaymentInfoModify/FinalPaymentInfoModify",
+    "pages/Financialer/FinalPaymentInfoModifyDetail/FinalPaymentInfoModifyDetail",
+    "pages/Financialer/FinalPaymentDetail/FinalPaymentDetail",
+    "pages/Financialer/orderListForFinalPayment/orderListForFinalPayment",
+    "pages/Customer/orderListForKaiPing/orderListForKaiPing",
+    "pages/OrderSearch/OrderSearch",
+    "pages/goBackPageForFinal/goBackPageForFinal",
+    "pages/Businesser/OrderManagement/OrderManagement",
+    "pages/Financialer/FinalPaymentInfoDisplay/FinalPaymentInfoDisplay",
+    "pages/Customer/DealProfit/DealProfit",
+    "pages/Businesser/foodIn/foodIn",
+    "pages/Businesser/Stocktaking/Stocktaking",
+    "pages/Financialer/BzZyAdd/BzZyAdd",
+    "pages/Businesser/priceUpdate/priceUpdate",
+    "pages/Businesser/print/print"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#b5b5b5",
+    "selectedColor": "#e8be83",
+    "borderStyle": "black",
+    "backgroundColor": "#f9f8f8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/new/home.png",
+        "selectedIconPath": "image/new/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/OrderSearch/OrderSearch",
+        "iconPath": "image/new/order.png",
+        "selectedIconPath": "image/new/order_active.png",
+        "text": "订单查询"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "image/new/center.png",
+        "selectedIconPath": "image/new/center_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,50 @@
+<!--pages/Businesser/bindingContract/bindingContract.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+	<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+	<mp-form-page subtitle="">
+		<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+			<van-cell-group title="合同号录入" custom-class="new_order_group">
+				<van-cell prop="name" title="合同编号" ext-class="" is-link>
+					<input bindinput="formInputChange" data-field="yewu" class="weui-input" type="text" placeholder="请输入合同编号" />
+				</van-cell>
+				<picker range="{{steelFacList}}" bindchange="bindUpStreamChange">
+					<van-cell prop="upstream" title="上游厂家" class="picker" footer="必选" is-link>
+						{{steelFac}}
+					</van-cell>
+				</picker>
+			</van-cell-group>
+		</mp-form>
+
+		<view slot="button" wx:if="{{!tag}}" class="bottom_button">
+			<van-button type="default" custom-class="theme_bg_color new_button" bindtap="cancel" >取消</van-button>
+			<van-button disabled="{{!isClickUpsteam}}" custom-class="theme_bg_color new_button" bind:click="connectToOrder">去关联订单</van-button>
+			<!-- <button class="theme_bg_color new_button" type="primary" bindtap="connectToOrder" disabled="{{!isClickUpsteam}}">去关联订单</button> -->
+		</view>
+		<view wx:else>
+			<mp-cells title="订单列表">
+				<mp-checkbox-group prop="checkbox" multi="{{!isTaiGang}}" bindchange="checkboxChange">
+					<mp-checkbox wx:for="{{lists}}" wx:key="value" label="业务号: {{item.workNo}}" value="{{item.orderId}}" checked="{{item.checked}}">
+					</mp-checkbox>
+				</mp-checkbox-group>
+			</mp-cells>
+
+			<view wx:if="{{!isTaiGang}}">
+				<van-button custom-class="theme_bg_color inner_btn" bind:click="submitForm">提交绑定请求</van-button>
+				<!-- <button class="weui-btn" type="primary" bindtap="submitForm">提交绑定请求</button> -->
+			</view>
+			<view wx:elif="{{isTaiGang}}">
+        <van-button disabled="{{!hasClickYewu}}" custom-class="theme_bg_color inner_btn" bind:click="getDetail">获得详细品类</van-button>
+				<!-- <button class="weui-btn" type="primary" bindtap="getDetail" disabled="{{!hasClickYewu}}">获得详细品类</button> -->
+				<mp-cells title="选择材质规格" wx:if="{{hasClick}}">
+					<mp-checkbox-group prop="checkbox" multi="{{false}}" bindchange="caizhiChange">
+						<mp-checkbox wx:for="{{caizhilists}}" wx:key="value" label="{{item.caizhi}} {{item.guige}}" value="{{item.id}}" checked="{{item.checked}}">
+						</mp-checkbox>
+					</mp-checkbox-group>
+          <van-button disabled="{{!hasClickGuige}}" custom-class="theme_bg_color inner_btn" bind:click="submitForm">提交绑定请求</van-button>
+					<!-- <button class="weui-btn" type="primary" bindtap="submitForm" disabled="{{!hasClickGuige}}">提交绑定请求</button> -->
+
+				</mp-cells>
+			</view>
+		</view>
+	</mp-form-page>
+</view>

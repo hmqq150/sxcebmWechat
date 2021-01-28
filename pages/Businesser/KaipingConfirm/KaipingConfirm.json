@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "待出库商品",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  }
+}

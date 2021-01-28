@@ -1,0 +1,75 @@
+/* pages/Businesser/bindingContract/bindingContract.wxss */
+@import '../../common.wxss';
+
+.weui-agree .weui-agree__text {
+  display: inline;
+}
+.new_order_group,.weui-cells{
+  width: 94%;
+  margin:0 auto;
+}
+.van-cell-group__title,.weui-cells__title{
+  color: #666 !important;
+  padding: var(--cell-group-title-padding,30rpx 10rpx 30rpx 60rpx) !important;
+}
+.weui-cells__title{
+  margin: 0 !important;
+}
+.weui-cell{
+  padding:26rpx 20rpx !important;
+}
+.weui-form{
+  padding-top: 0 !important;
+  min-height: auto !important;
+  background-color: transparent !important;
+}
+.weui-form__control-area{
+  margin:0 !important;
+}
+.weui-input{
+  position: relative;
+  top: 4rpx;
+}
+.bottom_button{
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding:40rpx 0;
+  text-align: center;
+}
+.cancel_button{
+  left:-10rpx;
+  background-color: transparent !important;
+  border-color: #636363 !important;
+}
+.new_button{
+  right: -10rpx;
+}
+.new_button,.cancel_button{
+  display: inline-block !important;
+  width: 43% !important;
+  line-height: 44px !important;
+  font-weight: normal !important;
+  border-radius: 10rpx !important;
+}
+.van-cell__title,.weui-cell__bd{
+  color: #000;
+  font-size: 30rpx;
+}
+.van-cell{
+  padding:var(--cell-vertical-padding,26rpx) var(--cell-horizontal-padding,20rpx) !important;
+}
+.weui-cell::before{
+  left:30rpx !important;
+  width:96%;
+  border-top:1px solid #ebedf0 !important;
+  color: #ebedf0 !important;
+}
+.inner_btn{
+  margin-top: 30rpx;
+  border-radius: 10rpx !important;
+  position: relative;
+  left: 26%;
+}

@@ -1,0 +1,40 @@
+
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="login-container">
+	<view class="logo-container">
+		<image src="../../image/new/logo.png" mode="widthFix"></image>
+		<text>智慧山商</text>
+	</view>
+	<view class="login-form">
+		<view class="login-item">
+			<view class="title">用户名</view>
+			<van-field value="{{ userName }}" placeholder="请输入用户名" data-field="username" bind:input="formInputChange" input-class="input" cursor-spacing="100"/>
+		</view>
+        <view class="login-item">
+			<view class="title">密码</view>
+			<van-field value="{{ userInputPwd }}" placeholder="请输入密码" bind:input="formInputChange" input-class="input" type="password" data-field="password" cursor-spacing="100"/>
+		</view>
+        <view class="login-terms">
+            <van-checkbox checked-color="#e8be83" value="{{ checked }}" bind:change="onChange">登录即认同《法律条款及隐私政策》</van-checkbox>
+        </view>
+        <view>
+            <van-button bindgetuserinfo="submitForm" open-type="getUserInfo" round block custom-class="theme_bg_color login-btn">登录</van-button>
+        </view>
+	</view>
+</view>
+<!-- <mp-form-page>
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+        <mp-cells title="用户登录" footer="">
+            <mp-cell prop="name" title="用户名" ext-class="">
+               <input class="weui-input" name="username" bindinput="formInputChange" type="text" placeholder="请输入用户名"  data-field="username" />
+            </mp-cell>
+            <mp-cell prop="password" title="密码" ext-class="">
+                <input password='true' bindinput="formInputChange" data-field="password" class="weui-input" placeholder="请输入密码" name="password"/>
+            </mp-cell>
+        </mp-cells>
+    </mp-form>
+
+    <view slot="button">
+        <button class="weui-btn" type="primary" bindtap="submitForm">登录</button>
+    </view>
+</mp-form-page> -->

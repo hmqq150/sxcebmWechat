@@ -1,0 +1,50 @@
+.pop_box_container{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pop_box{
+  width: 80%;
+  padding-top:40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.title{
+  color: #000;
+  font-size: 36rpx;
+  line-height: 3;
+}
+.content{
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+}
+.footer_btn::after{
+  content: "";
+  display: flex;
+  clear: both;
+}
+.footer_btn{
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+}
+.cancel_btn,.sure_btn{
+  flex: 1;
+  font-size: 30rpx;
+  color: #b5b5b5;
+  padding:20rpx 0;
+}
+.cancel_btn{
+  border-right: 1px solid #e0e0e0;
+}
+.sure_btn{
+  color: #e8be83;
+}

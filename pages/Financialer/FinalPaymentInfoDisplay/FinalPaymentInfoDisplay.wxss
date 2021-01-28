@@ -1,0 +1,40 @@
+
+@import '../../common.wxss';
+
+.bottom_box {
+    width: 94%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.weui-form-preview__label {
+    color: #000 !important;
+    font-size: 30rpx;
+}
+
+.code_lines {
+    font-size: 30rpx;
+    color: #999;
+    line-height: 2;
+}
+
+.bottom_btn {
+    width: 94%;
+    margin: 20rpx auto;
+}
+
+.weui-cells__title {
+    color: #666 !important;
+    padding: var(--cell-group-title-padding, 20rpx 10rpx 20rpx 60rpx) !important;
+    margin:0 !important;
+    font-size: 28rpx !important;
+}
+.weui-cell{
+    padding:20rpx 50rpx !important;
+}
+.weui-cell__hd{
+    font-size: 28rpx !important;
+}

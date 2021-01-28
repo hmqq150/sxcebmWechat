@@ -1,0 +1,41 @@
+/* pages/Financialer/MarginDetail/MarginDetail.wxss */
+@import '../../common.wxss';
+
+.weui-agree .weui-agree__text {
+  display: inline;
+}
+.weui-form {
+  width: 94%;
+  border-radius: 10rpx;
+  margin: 24rpx auto 0 auto;
+  box-sizing: border-box;
+  min-height: auto !important;
+  display: block !important;
+}
+.weui-agree .weui-agree__text {
+  display: inline;
+}
+
+.weui-form__title {
+  font-size: 34rpx !important;
+}
+.weui-cells__title {
+  font-size: 28rpx !important;
+}
+.weui-cell {
+  padding: 20rpx 60rpx !important;
+  font-size: 28rpx !important;
+}
+.weui-cell::before,.weui-cells::after {
+  border: none !important;
+}
+.weui-form__control-area{
+  margin:40rpx 0 !important;
+}
+.input_money{
+  border-bottom: 1px solid #f2f2f2;
+  width:82%;
+  padding: 20rpx 0 !important;
+  margin:10rpx auto;
+  box-sizing: border-box;
+}

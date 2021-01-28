@@ -1,0 +1,57 @@
+/* pages/Customer/KaiPingApply/KaiPingApply.wxss */
+@import '../../common.wxss';
+
+.weui-agree .weui-agree__text {
+  display: inline;
+}
+.page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.weui-form {
+  width: 94%;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.weui-agree .weui-agree__text {
+  display: inline;
+}
+
+.weui-form__title {
+  font-size: 32rpx !important;
+}
+
+.weui-form__desc {
+  font-size: 28rpx !important;
+  color: #999 !important;
+}
+
+.weui-cells__title {
+  font-size: 28rpx !important;
+}
+
+.cancel_button {
+  left: -10rpx;
+  background-color: transparent !important;
+  border-color: #636363 !important;
+}
+
+.new_button {
+  right: -10rpx;
+}
+
+.new_button,
+.cancel_button {
+  display: inline-block !important;
+  width: 43% !important;
+  line-height: 44px !important;
+  font-weight: normal !important;
+  border-radius: 10rpx !important;
+}
+
+.bottom_btn {
+  text-align: center;
+}

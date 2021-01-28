@@ -1,0 +1,66 @@
+<!--pages/Businesser/KaipingConfirm/KaipingConfirm.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+	<!-- <view class="page__hd">
+		<view class="page__title">待出库商品</view>
+		<view class="page__desc">请选择商品</view>
+	</view> -->
+	<view class="page__bd">
+		<block wx:for-items="{{lists}}" wx:key="{{item.foodId}}">
+			<view class="weui-form-preview">
+				<view class="top_box">
+					<!-- <view class="weui-form-preview__hd">
+						<view class="weui-form-preview__label"></view>
+						<view class="weui-form-preview__value_in-hd">{{item.foodName}}</view>
+					</view> -->
+					<view class="title_line">
+						<text class="left_line theme_background_color"></text>
+						<text class="title_tag theme_background_color">当季热销</text>
+						<text class="title_label">待出库商品</text>
+						<view class="title_value">{{item.foodName}}</view>
+					</view>
+					<view class="weui-form-preview__bd top_insideNo">
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">入库编号</view>
+							<view class="weui-form-preview__value">{{item.insideNo}}</view>
+						</view>
+					</view>
+				</view>
+				<view class="weui-form-preview__bd bottom_box">
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">公司</view>
+						<view class="weui-form-preview__value">{{item.company}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">材质</view>
+						<view class="weui-form-preview__value">{{item.caizhi}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">规格</view>
+						<view class="weui-form-preview__value">{{item.guige}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">吨数</view>
+						<view class="weui-form-preview__value">{{item.weight}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">钢卷号</view>
+						<view class="weui-form-preview__value">{{item.foodNo}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">业务人员</view>
+						<view class="weui-form-preview__value">{{item.workerName}}</view>
+					</view>
+				</view>
+				<!-- <view class="weui-form-preview__ft">
+          <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="kaipingDetail" id="{{item.foodId}}" value="{{item.message}}" >开平详情</view>
+          <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="kaipingSubmit" id="{{item.foodId}}">确认完毕</view>
+        </view> -->
+				<view slot="button" class="bottom_button">
+					<van-button type="default" custom-class="cancel_button" id="{{item.foodId}}" bind:click="kaipingDetail">开平详情</van-button>
+					<van-button custom-class="theme_bg_color new_button" id="{{item.foodId}}" bind:click="kaipingSubmit">确认完毕</van-button>
+					<!-- <button class="theme_bg_color new_button" type="primary" bindtap="connectToOrder" disabled="{{!isClickUpsteam}}">去关联订单</button> -->
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

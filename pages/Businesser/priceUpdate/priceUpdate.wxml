@@ -1,0 +1,36 @@
+<view class="index">
+	<view>
+		<view class="item_title">设置</view>
+		<view class="kind-list">
+			<block wx:for-items="{{list}}" wx:key="{{item.id}}">
+				<view class="kind-list-item">
+					<view id="{{index}}" class="kind-list-item-hd" bindtap="kindToggle">
+						<view class="kind-list-text">杠号:{{item.gangNo}} 所属:{{item.companyName}}</view>
+						<!-- <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image> -->
+						<view class="navigator-arrow"></view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>
+<mp-halfScreenDialog bindbuttontap="ee"show="{{showw}}" maskClosable="true">
+      <view slot="title">
+        <view class="weui-form-preview__item">
+          当前商品({{gangNo}})采购价{{caigouPrice}}</view>
+      </view>
+      <mp-form slot="desc">
+        <van-cell-group>
+          <van-cell prop="" title="请输入发票单价" ext-class="" icon="gold-coin-o">
+            <input bindinput="formInputChange" data-field="money" class="weui-input" type="digit" placeholder="请输入单价"
+              value="{{money}}" />
+          </van-cell>
+        </van-cell-group>
+
+      </mp-form>
+      <view slot="footer">
+        <button type="primary" bindtap="btnconfirm">确定</button>
+        <!-- <button type="default" bindtap="btncancel">取消</button> -->
+
+      </view>
+    </mp-halfScreenDialog>

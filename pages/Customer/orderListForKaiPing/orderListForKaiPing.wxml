@@ -1,0 +1,48 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <!-- <view class="page__hd">
+    <view class="page__title">待出库商品</view>
+    <view class="page__desc">请选择商品</view>
+  </view> -->
+  <view class="page__bd">
+    <block wx:for-items="{{lists}}" wx:key="{{item.foodId}}">
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd title_line clear">
+          <view class="weui-form-preview__label">商品名称</view>
+          <view class="weui-form-preview__value_in-hd">{{item.foodName}}</view>
+        </view>
+        <view class="weui-form-preview__bd bottom_box">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">入库编号</view>
+            <view class="weui-form-preview__value_in-hd">{{item.insideNo}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">材质</view>
+            <view class="weui-form-preview__value">{{item.caizhi}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">规格</view>
+            <view class="weui-form-preview__value">{{item.guige}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">吨数</view>
+            <view class="weui-form-preview__value">{{item.weight}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">钢卷号</view>
+            <view class="weui-form-preview__value">{{item.foodNo}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">业务人员</view>
+            <view class="weui-form-preview__value">{{item.workerName}}</view>
+          </view>
+        </view>
+        <view class="bottom_btn">
+          <view wx:if="{{item.kpStatus == 0}}" class="weui-form-preview__btn weui-form-preview__btn_default theme_default_color" hover-class="weui-form-preview__btn_active" bindtap="kaipingApply" id="{{item.foodId}}">开平申请</view>
+          <view wx:elif="{{item.kpStatus == 1}}" class="weui-form-preview__btn weui-form-preview__btn_default theme_default_color" hover-class="weui-form-preview__btn_active"  id="{{item.foodId}}" >开平中</view>
+          <view  wx:else="{{item.kpStatus == 0}}" class="weui-form-preview__btn weui-form-preview__btn_default theme_default_color" hover-class="weui-form-preview__btn_active"  id="{{item.foodId}}" >已开平</view>
+          <view class="weui-form-preview__btn weui-form-preview__btn_primary theme_bg_color" hover-class="weui-form-preview__btn_active" bindtap="submitForm" id="{{item.foodId}}">直接出库</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

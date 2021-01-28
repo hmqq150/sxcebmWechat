@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "山商交易",
+  "usingComponents": {
+            "van-divider": "@vant/weapp/divider/index"
+  }
+}

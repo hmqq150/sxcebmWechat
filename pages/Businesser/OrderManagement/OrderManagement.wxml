@@ -1,0 +1,35 @@
+<!--pages/Businesser/OrderManagement/OrderManagement.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+  <!-- <view class="page__hd">
+    <view class="page__title">待处理订单</view>
+    <view class="page__desc">请选择您要管理的订单</view>
+  </view> -->
+  <view class="page__bd">
+    <block wx:for-items="{{lists}}" wx:key="{{item.orderId}}">
+
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd title_line clear">
+          <view class="weui-form-preview__label">订单号</view>
+          <view class="weui-form-preview__value_in-hd">{{item.workNo}}</view>
+        </view>
+        <view class="weui-form-preview__bd bottom_box">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">客户公司</view>
+            <view class="weui-form-preview__value">{{item.companyName}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">材质</view>
+            <view class="weui-form-preview__value">{{item.caizhi}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">规格</view>
+            <view class="weui-form-preview__value">{{item.guige}}</view>
+          </view>
+        </view>
+        <view class="weui-form-preview__ft bottom_btn">
+          <view class="weui-form-preview__btn weui-form-preview__btn_primary theme_bg_color" hover-class="weui-form-preview__btn_active" bindtap="confirm" id="{{item.orderId}}">已全部入库</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

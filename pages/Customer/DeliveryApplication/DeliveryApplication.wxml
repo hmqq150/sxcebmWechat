@@ -1,0 +1,84 @@
+<!--pages/Customer/DeliveryApplication/DeliveryApplication.wxml-->
+<!-- <view class="add-wrap" hover-class="plus-hover">
+
+<image src="/image/blackcard.jpeg"></image>
+
+</view> -->
+<view class="page" data-weui-theme="{{theme}}">
+
+	<!-- <view class="page__hd">
+		<view class="page__title">库存商品</view>
+		<view class="page__desc">提交出库申请</view>
+	</view> -->
+	<view class="page__bd">
+		<block wx:for-items="{{lists}}" wx:key="{{item.foodId}}" field="{{item.foodId}}">
+
+			<view class="weui-form-preview">
+				<view class="weui-form-preview__hd title_line clear">
+					<view class="weui-form-preview__label">产品品名</view>
+					<view class="weui-form-preview__value_in-hd">{{item.pList}}</view>
+				</view>
+
+				<view class="weui-form-preview__bd bottom_box">
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">业务人员</view>
+						<view class="weui-form-preview__value">{{item.workerName}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">上游</view>
+						<view class="weui-form-preview__value">{{item.upsteam}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">仓储</view>
+						<view class="weui-form-preview__value">{{item.stroge}}</view>
+					</view>
+					<view class="weui-form-preview__item">
+						<view class="weui-form-preview__label">所属</view>
+						<view class="weui-form-preview__value">{{item.company}}</view>
+					</view>
+
+					<mp-cells>
+						<mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+							<mp-checkbox wx:for="{{item.content}}" wx:key="foodId" label="{{item.str}}" value="{{item.foodId}}" slot="sss" checked="{{item.checked}}"></mp-checkbox>
+						</mp-checkbox-group>
+
+					</mp-cells>
+				</view>
+				<view class="weui-form-preview__ft bottom_btn">
+					<!-- <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" >未收到保证金</view> -->
+					<view class="weui-form-preview__btn weui-form-preview__btn_primary theme_bg_color" hover-class="weui-form-preview__btn_active" bindtap="confirm" id="{{item.orderId}}">出库申请</view>
+
+				</view>
+
+			</view>
+		</block>
+
+
+
+		<mp-halfScreenDialog bindbuttontap="ee" show="{{showw}}" maskClosable="{{true}}">
+			<!-- <view class="payment_box"> -->
+				<view slot="title" class="title">
+					<view class="weui-form-preview__item">请输入您的打款金额</view>
+					<view class="weui-form-preview__item sub_title">（不得低于本次待出库货物总价:{{totalMoney}}）</view>
+				</view>
+				<mp-form slot="desc">
+					<van-cell-group>
+						<van-cell prop="" title="本次打款金额" custom-class="input_box" icon="gold-coin-o">
+							<input bindinput="formInputChange" data-field="money" class="weui-input" type="digit" placeholder="请输入金额" value="{{money}}" />
+						</van-cell>
+					</van-cell-group>
+
+				</mp-form>
+				<view slot="footer" class="bottom_btn">
+					<van-button type="default" custom-class="cancel_button" bind:click="btncancel">取消</van-button>
+					<van-button  color="#e8be82" custom-class="theme_bg_color new_button" bind:click="btnconfirm">确定</van-button>
+
+				</view>
+			<!-- </view> -->
+		</mp-halfScreenDialog>
+	</view>
+	<van-cell class="custom-class" class="sss">
+		<van-icon name="deal" icon="comment-o" />
+	</van-cell>
+	<mp-icon class="bottom-button"  type="field" icon="more2" size="30" wx:if="{{isShow}}" bindtap="deal"></mp-icon>
+</view>

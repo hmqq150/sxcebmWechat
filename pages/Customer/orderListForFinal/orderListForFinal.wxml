@@ -1,0 +1,50 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <!-- <view class="page__hd">
+    <view class="page__title">待处理商品</view>
+    <view class="page__desc">请选择商品 并补足差价</view>
+  </view> -->
+  <view class="page__bd">
+    <block wx:for-items="{{lists}}" wx:key="{{item.id}}">
+
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd title_line clear">
+          <view class="weui-form-preview__label">需支付剩余金额</view>
+          <view class="weui-form-preview__value_in-hd">¥{{item.value}}</view>
+        </view>
+        <view class="weui-form-preview__bd bottom_box">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">当前批次货款</view>
+            <view class="weui-form-preview__value">{{item.value - item.profit}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">本次利息总计</view>
+            <view class="weui-form-preview__value">{{item.profit}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">产品品名</view>
+            <view class="weui-form-preview__value">{{item.pList}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">订单号</view>
+            <view class="weui-form-preview__value">{{item.workNo}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">业务人员</view>
+            <view class="weui-form-preview__value">{{item.workerName}}</view>
+          </view>
+          <mp-cells>
+            <block wx:for-items="{{item.content}}" wx:key="foodId">
+              <view class="code_lines">{{item.insideNo}} 钢卷号{{item.foodNo}}</view>
+              <view class="code_lines"> 材质 -- {{item.caizhi}} 规格 -- {{item.guige}}</view>
+              <view class="code_lines"> 吨数: {{item.weight}}</view>
+            </block>
+          </mp-cells>
+        </view>
+        <view class="bottom_btn">
+          <van-button type="default" custom-class="cancel_button" bind:click="goBack" data-id="{{item.id}}">退回</van-button>
+          <van-button custom-class="theme_bg_color new_button" bind:click="confirm" data-id="{{item.id}}">确认已支付</van-button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

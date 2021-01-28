@@ -1,0 +1,33 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+  <mp-form-page title="保证金支付确认" subtitle="">
+    <mp-form id="form"  models="{{formData}}">
+      <mp-cells title="选择客户保证金支付方式">
+        <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+          <mp-checkbox wx:for="{{checkboxItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}">
+
+            <input bindinput="formInputChange" data-field="数额" class="weui-input" type="text" placeholder="请输入数额" />
+
+          </mp-checkbox>
+
+        </mp-checkbox-group>
+      </mp-cells>
+      <mp-cells title="支付金额"wx:if="{{blList[0]||blList[1]||blList[2]}}">
+        <mp-cell wx:if="{{blList[0]}}" prop="cash" title="现金"  ext-class="">
+          <input bindinput="formInputChange" data-field="cash" class="weui-input" type="text" placeholder="请输入金额" />
+        </mp-cell>
+        <mp-cell wx:if="{{blList[1]}}"  prop="baozhi" title="保值" ext-class="">
+          <input bindinput="formInputChange" data-field="baozhi" class="weui-input" type="text" placeholder="请输入金额" />
+        </mp-cell>
+        <mp-cell  wx:if="{{blList[2]}}" prop="zhjangyu" title="帐余" ext-class="input_money">
+          <input bindinput="formInputChange" data-field="zhangyu" class="weui-input" type="text" placeholder="请输入金额" />
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+
+    <view slot="button">
+      <van-button custom-class="theme_bg_color" bind:click="submitForm" block>确定</van-button>
+    </view>
+  </mp-form-page>
+</view>

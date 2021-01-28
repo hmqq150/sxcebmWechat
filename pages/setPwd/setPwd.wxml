@@ -1,0 +1,26 @@
+
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<mp-form-page>
+	<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+		<mp-cells title="重新设置密码" footer="">
+			<mp-cell prop="name" title="姓名" ext-class="">
+				<input data-field="name" class="weui-input" value="{{realName}}" disabled="true" />
+			</mp-cell>
+			<mp-cell prop="password" title="新密码" ext-class="">
+				<input password='true' bindinput="formInputChange" data-field="password" class="weui-input" placeholder="请输入密码" />
+			</mp-cell>
+            <mp-cell prop="password" title="重 复" ext-class="">
+				<input password='true' bindinput="formInputChangeComfirm" class="weui-input" placeholder="请再次输入密码" />
+			</mp-cell>
+		</mp-cells>
+	</mp-form>
+    <view class="password_desc">请输入字母和数字组合增加安全性</view>
+
+	<view slot="button" class="bottom_button">
+		<!-- <button class="weui-btn" type="primary" bindtap="submitForm">确定</button> -->
+		<van-button type="default" custom-class="theme_bg_color new_button" bindtap="cancel">取消</van-button>
+		<van-button custom-class="theme_bg_color new_button" bind:click="submitForm">确定</van-button>
+	</view>
+</mp-form-page>
+<pop-box wx:if="{{showPop}}" text="修改成功" bind:cancelEvent="cancelBtn" bind:sureEvent="sureBtn"></pop-box>

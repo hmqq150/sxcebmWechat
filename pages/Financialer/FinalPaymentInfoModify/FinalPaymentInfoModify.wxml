@@ -1,0 +1,64 @@
+<!--pages/Financialer/FinalPaymentInfoChose/FinalPaymentInfoChose.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+  <!-- <view class="page__hd">
+    <view class="page__title">待处理商品</view>
+    <view class="page__desc">用户已提交出库申请 请尽快处理</view>
+  </view> -->
+  <view class="page__bd">
+    <block wx:for-items="{{lists}}" wx:key="{{item.id}}">
+
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd title_line clear">
+          <view class="weui-form-preview__label">产品品名</view>
+          <view class="weui-form-preview__value_in-hd">{{item.pList}}</view>
+        </view>
+        <view class="weui-form-preview__hd title_line border_normal clear">
+          <view class="weui-form-preview__label">订单号</view>
+          <view class="weui-form-preview__value_in-hd">{{item.workNo}}</view>
+        </view>
+        <view class="weui-form-preview__bd bottom_box">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">下游客户</view>
+            <view class="weui-form-preview__value">{{item.companyName}}</view>
+          </view>
+          <view class="weui-form-preview__item" wx:if="{{item.status == 0}}">
+            <view class="weui-form-preview__label">客户支付货款金额</view>
+            <view class="weui-form-preview__value">{{item.actualPayment}}</view>
+          </view>
+          <view class="weui-form-preview__item" wx:elif="{{item.status == 1}}">
+            <view class="weui-form-preview__label">尾款: 请选择日期计算利息</view>
+            <view class="weui-form-preview__value"></view>
+          </view>
+          <view class="weui-form-preview__item" wx:elif="{{item.status == 2}}">
+            <view class="weui-form-preview__label">尾款: 等待客户支付金额</view>
+            <view class="weui-form-preview__value"></view>
+          </view>
+          <view class="weui-form-preview__item" wx:else="{{item.status == 3}}">
+            <view class="weui-form-preview__label">尾款：财务确认中</view>
+            <view class="weui-form-preview__value">{{item.actualPayment}}</view>
+          </view>
+          <!-- <mp-cells>
+            <mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+              <mp-checkbox wx:for="{{item.content}}" wx:key="foodId" label="{{item.str}}" value="{{item.foodId}}" checked="{{item.checked}}"></mp-checkbox>
+            </mp-checkbox-group>
+
+          </mp-cells> -->
+          <mp-cells title="产品列表" footer="" wx:for-items="{{item.content}}" wx:key="foodId">
+            <mp-cell value="{{item.str}}" bindtap="fff">
+              <!-- <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image> -->
+            </mp-cell>
+          </mp-cells>
+        </view>
+        <view class="weui-form-preview__ft bottom_btn">
+          <!-- <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" >未收到保证金</view> -->
+          <view class="weui-form-preview__btn weui-form-preview__btn_primary theme_bg_color" wx:if="{{item.status == 2}}"
+            hover-class="weui-form-preview__btn_active" bindtap="confirm" disable="true" id="{{index}}">马上处理</view>
+            <view class="weui-form-preview__btn weui-form-preview__btn_primary theme_bg_color" wx:if="{{item.status != 2}}"
+            hover-class="weui-form-preview__btn_active" bindtap="confirm" id="{{index}}">马上处理</view>
+        </view>
+      </view>
+    </block>
+
+
+  </view>
+</view>

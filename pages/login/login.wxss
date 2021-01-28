@@ -1,0 +1,45 @@
+/* pages/login/login.wxss */
+@import '../common.wxss';
+.login-container{
+  height: 100vh;
+  background-color: #ffffff;
+}
+.logo-container{
+  padding:100rpx 0;
+  line-height: 100rpx;
+  text-align: center;
+}
+.logo-container image{
+  width:100rpx;
+  vertical-align: top;
+}
+.logo-container text{
+  font-size: 54rpx;
+  padding-left: 40rpx;
+  font-weight: bold;
+}
+.login-item{
+  padding:0 60rpx;
+  margin-bottom: 20rpx;
+}
+.login-item .title{
+  font-size: 30rpx;
+  font-weight: bold;
+  padding:0 32rpx;
+}
+.input{
+  padding:10rpx 0 !important;
+}
+.login-terms{
+  margin: 80rpx 0;
+  text-align: center;
+  font-size: 24rpx;
+}
+.login-terms .van-checkbox{
+  justify-content: center;
+  color: #999 !important;
+}
+.login-btn{
+  width:80% !important;
+  font-size: 36rpx !important;
+}

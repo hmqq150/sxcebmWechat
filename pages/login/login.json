@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "登录",
+  "component": true,
+  "usingComponents": {
+    "mp-form-page": "../../page/weui/components/form-page/form-page",
+    "mp-toptips": "../../page/weui/components/toptips/toptips",
+    "mp-cells": "../../page/weui/components/cells/cells",
+    "mp-cell": "../../page/weui/components/cell/cell",
+    "mp-checkbox": "../../page/weui/components/checkbox/checkbox",
+    "mp-checkbox-group": "../../page/weui/components/checkbox-group/checkbox-group",
+    "mp-form": "../../page/weui/components/form/form",
+    "van-field": "@vant/weapp/field/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

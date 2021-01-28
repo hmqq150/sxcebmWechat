@@ -1,0 +1,18 @@
+<!--pages/Customer/KaiPingApply/KaiPingApply.wxml-->
+
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<mp-form-page title="开平申请" subtitle="请将开平详细要求写于下方后提交，业务人员经过确认后将通知您">
+    <mp-form id="form" models="{{formData}}">
+
+        <mp-cells title="开平要求">
+            <mp-cell has-header="{{false}}" has-footer="{{false}}" title="" ext-class="">
+                <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" bindinput="input" />
+                <view class="weui-textarea-counter">0/200</view>
+            </mp-cell>
+        </mp-cells>
+    </mp-form>
+    <view slot="button" class="bottom_btn">
+        <van-button custom-class="theme_bg_color new_button" bind:click="submitForm">确定提交</van-button>
+    </view>
+</mp-form-page>

@@ -1,0 +1,100 @@
+/* pages/mine/mine.wxss */
+@import '../../common.wxss';
+@import '../../index.wxss';
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #b5b5b5;
+  font-size: 34rpx;
+}
+
+.user_info{
+  color: #000;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.weui-agree__link {
+  display: inline;
+  color: #586c94;
+}
+page {
+  min-height: 100vh;
+  background-color: #f3f4f4;
+}
+
+.van-switch {
+  margin: 0 16px 8px;
+}
+
+.demo-preview {
+  display: flex;
+  padding: 0 16px;
+}
+
+.demo-content {
+  padding-top: 6px;
+}
+
+.demo-content-h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.demo-content-p {
+  margin: 13px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.demo-preview-img {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+.item_title{
+  font-size: 30rpx;
+  color: #666;
+  padding:20rpx 10rpx 20rpx 60rpx;
+}
+.item_content{
+  width: 94%;
+  margin:0 auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  text-align: center;
+  padding:20rpx 0 30rpx 0;
+}
+.get_user_info{
+  width:250rpx;
+  height: 85rpx;
+  line-height: 62rpx;
+  font-size: 34rpx;
+  color: #000;
+  background-color: #e7e7e7;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
+}
+.item_desc{
+  font-size: 26rpx;
+  color: #898d91;
+}
+.kind-list{
+  width: 94%;
+  margin:0 auto;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.kind-list-text{
+  font-size: 30rpx;
+}
